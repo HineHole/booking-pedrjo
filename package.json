@@ -42,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://bookings-api-igtv.onrender.com/bookings"
+  "proxy": "https://bookings-api-igtv.onrender.com"
 }
