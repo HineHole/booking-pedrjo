@@ -1,8 +1,11 @@
 import React from 'react'
 
- function MyPages() {
- 
-}
+const response = await fetch ('https://bookings-api-igtv.onrender.com/bookings');
 
+function MyPages() {
+  return (
+    <div>MyPages</div>
+  )
+}
 
 export default MyPages
