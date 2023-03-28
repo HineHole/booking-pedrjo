@@ -18,7 +18,9 @@ function App() {
           <Route path="/main" element={<HomePage></HomePage>} />
           <Route path="/about" element={<About></About>} />
           <Route path="/contact" element={<ContactUs></ContactUs>} />
-          <Route path="/booking" element={<BookingList></BookingList>} />
+          <Route path="/customer" element={<Customer></Customer>} />
+          <Route path="/cleaner" element={<Cleaner></Cleaner>} />
+          <Route path="/bookinglist" element={<BookingList></BookingList>} />
         </Routes>
       </BrowserRouter>
     </div>

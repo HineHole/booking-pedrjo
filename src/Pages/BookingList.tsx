@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/MyPages.css";
+import "../styles/BookingList.css";
 
 /*export async function getData() {
   const url = "https://bookings-api-igtv.onrender.com";
