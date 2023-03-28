@@ -1,11 +1,14 @@
-import React from 'react'
-import '../styles/Header.css' 
-
+import React from "react";
+import "../styles/Header.css";
 
 function Header() {
   return (
-    <div>Header</div>
-  )
+    <div>
+      Header
+      <button></button>
+      <button></button>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
