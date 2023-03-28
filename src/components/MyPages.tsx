@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import "../styles/MyPages.css";
 
-const response = await fetch ('https://bookings-api-igtv.onrender.com/bookings');
+export async function getData() {
+  const url = "https://bookings-api-igtv.onrender.com";
+  const url_get = `${url}/bookings`;
 
-function MyPages() {
-  return (
-    <div>MyPages</div>
-  )
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return data;
 }
 
-export default MyPages
+function MyPages() {
+  return <div>MyPages</div>;
+}
+
+export default MyPages;

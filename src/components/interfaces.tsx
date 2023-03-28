@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function interfaces() {
-  return (
-    <div>interfaces</div>
-  )
+export interface BookingList {
+  customer: string;
+  level: string;
+  employee: string;
+  status: string;
+  id: string;
+  time: number;
+  date: string;
 }
-
-export default interfaces

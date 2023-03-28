@@ -1,11 +1,14 @@
-import React from "react";
-import "./App.css";
-import Header from "./components/Header";
-import HomePage from "./components/HomePage";
-import MyPages from "./components/MyPages";
+import React from 'react';
+import './App.css';  
+import Header from './components/Header';
+import HomePage from './components/HomePage';
+import MyPages from './components/MyPages';
 import Footer from "./components/Footer";
-import Interfaces from "./components/interfaces";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import interfaces from "./components/Interfaces"
+import {BrowserRouter, Route, Link} from 'react-router-dom'
+
+
+
 
 function App() {
   return (
