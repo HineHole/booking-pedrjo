@@ -1,41 +1,64 @@
-import React from "react";
-import "../styles/BookingList.css";
+import React, { useState, useEffect } from "react";
+import '../styles/BookingList.css'
 
-/*export async function getData() {
-  const url = "https://bookings-api-igtv.onrender.com";
-  const url_get = `${url}/bookings`;
-
-  const response = await fetch(url);
-  const data = await response.json();
-
-  return data;
-}*/
-
-export  const {customer, level, employee, status, id, time, date} = Object.assign({}, {customer: "", level: "", employee: "", status: "", id: "", time: "", date: false});
-
-
-fetch("https://bookings-api-igtv.onrender.com/bookings", {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-  },
-})
-  .then((response) => {
-    if (response.status === 200) {
-      response.json().then((j) => console.log(j));
-    } else {
-      console.log("ERROR", response.status);
-    }
-  })
-  .catch((error) => console.log(error));
-
-
-
-
-function MyPages() {
-
-
-  return <div>Booking List Data</div>;
+interface User {
+  customer: string;
+  level: string;
+  employee: string;
+  status: boolean;
+  id: string;
+  time: number;
+  date: string;
 }
 
-export default MyPages;
+const Users: React.FC = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch(
+        "https://bookings-api-igtv.onrender.com/bookings"
+      );
+      const data = await response.json();
+      setUsers(data);
+    };
+    fetchUsers();
+  }, []);
+
+  return (
+    <div>
+      <h1>Booking Resume</h1>
+      <table id="customers">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Employee</th>
+            <th>Type of Cleaning</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        {users.map((user) => (
+          <tbody>
+            <tr>
+              <td>{user.customer}</td>
+              <td>{user.employee}</td>
+              <td>{user.level}</td>
+              <td>{user.date}</td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+    </div>
+  );
+};
+
+export default Users;
+
+/* <tr>
+    <th>Customer</th>
+    <th>Cleaning Level</th>
+    <th>Employee</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
+  </thead>*/

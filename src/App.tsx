@@ -20,7 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactUs></ContactUs>} />
           <Route path="/customer" element={<Customer></Customer>} />
           <Route path="/cleaner" element={<Cleaner></Cleaner>} />
-          <Route path="/bookinglist" element={<BookingList></BookingList>} />
+          <Route path="/booking" element={<BookingList></BookingList>} />
         </Routes>
       </BrowserRouter>
     </div>
