@@ -26,6 +26,19 @@ body{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #c99a7d;
+    background-color: #7dacc9;
     color: white;
+  }
+
+  button{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border-color: white;
+    background-color: white;
+  }
+  
+  button:hover{
+    background-color: rgb(229, 70, 70);
+  
   }

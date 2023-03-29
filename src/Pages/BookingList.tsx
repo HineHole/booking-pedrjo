@@ -6,7 +6,7 @@ interface User {
   level: string;
   employee: string;
   status: boolean;
-  id: string;
+  id: number;
   time: number;
   date: string;
 }
@@ -25,9 +25,18 @@ const Users: React.FC = () => {
     fetchUsers();
   }, []);
 
+  const deletelist = async (id: number) => {
+    await fetch(`https://bookings-api-igtv.onrender.com/booking/${id}`, {
+      method: 'DELETE'
+    });
+    setUsers(users.filter(user => user.id !== id));
+  };
+
+
+
   return (
     <div>
-      <h1>Booking Resume</h1>
+      <h1>Booking List</h1>
       <table id="customers">
         <thead>
           <tr>
@@ -44,9 +53,14 @@ const Users: React.FC = () => {
               <td>{user.employee}</td>
               <td>{user.level}</td>
               <td>{user.date}</td>
+             <td> <button onClick={() => deletelist(user.id)}>Delete</button></td>
             </tr>
+            
+            
           </tbody>
+          
         ))}
+        <button>Delete All</button>
       </table>
     </div>
   );
