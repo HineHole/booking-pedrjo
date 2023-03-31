@@ -22,6 +22,7 @@ function App() {
           <Route path="/booking" element={<BookingList></BookingList>} />
         </Routes>
       </BrowserRouter>
+      <Footer companyName="Städa Fint AB" />
     </div>
   );
 }
