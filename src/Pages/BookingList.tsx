@@ -6,7 +6,7 @@ interface User {
   level: string;
   employee: string;
   status: boolean;
-  id: number;
+  id: string;
   time: number;
   date: string;
 }
@@ -25,7 +25,7 @@ const Users: React.FC = () => {
     fetchUsers();
   }, []);
 
-  const deletelist = async (id: number) => {
+  const deletelist = async (id: string) => {
     await fetch(`https://bookings-api-igtv.onrender.com/booking/${id}`, {
       method: 'DELETE'
     });
