@@ -1,11 +1,31 @@
 body{
     margin: auto;
+    
+    background: url('https://coolbackgrounds.io/images/backgrounds/blue/blue-trianglify-8e4a0501.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
-.container{
-    border: 1px solid black;
-    padding: 15px;
+.container, .checked {
+    margin-top: 50px;
+    background: white;
+    border: 5px solid #ffffff;
+    border-radius: 25px;
+    /*height: 100vh;*/
+
+
 }
+
+.checked{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+
 #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -18,15 +38,15 @@ body{
     padding: 8px;
   }
   
-  #customers tr:nth-child(even){background-color: #c99a7d8e;}
+  #customers td:nth-child(even){background-color: #cddcf58e;}
   
-  #customers tr:hover {background-color: #ddd;}
+  #customers tr:hover {background-color: #d6efc6;}
   
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #7dacc9;
+    background-color: #8ec5e8;
     color: white;
   }
 
@@ -41,4 +61,10 @@ body{
   button:hover{
     background-color: rgb(229, 70, 70);
   
+  }
+
+  h2{
+  font-size: 35px;
+  color: #000000;
+  margin-bottom: 48px;
   }
