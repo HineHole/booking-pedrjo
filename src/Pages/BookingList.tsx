@@ -30,6 +30,9 @@ const Users: React.FC = () => {
       console.log(error);
     }
   };
+  
+let getDate = new Date().toLocaleString("en-US", { day : '2-digit', month:'2-digit', year:'2-digit'})
+  
 
   return (
     <>
@@ -76,15 +79,41 @@ const Users: React.FC = () => {
 
           <tbody>
             <tr /*key={}*/>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Sara</td>
+              <td>Adam</td>
+              <td>Diamond Cleaning</td>
+              <td>{getDate}</td>
               <td>
-                <button /*onClick={() => deletelist() } */>
-                  Delete&#10006;
-                </button>
+                 <input type="checkbox" className="check"/>
               </td>
+            </tr>
+            <tr>
+              <td>Sebastian</td>
+              <td>Eva</td>
+              <td>Top Cleaning</td>
+              <td>{getDate}</td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td>Sebastian</td>
+              <td>Zach</td>
+              <td>Window Cleaning</td>
+              <td>{getDate}</td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td>Sebastian</td>
+              <td>Eva</td>
+              <td>Top Cleaning</td>
+              <td>{getDate}</td>
+              <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td>Sebastian</td>
+              <td>Adam</td>
+              <td>Basic Cleaning</td>
+              <td>{getDate}</td>
+              <td><input type="checkbox" /></td>
             </tr>
           </tbody>
         </table>
