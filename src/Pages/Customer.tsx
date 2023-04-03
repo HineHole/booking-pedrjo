@@ -8,4 +8,6 @@ export class Customer extends Component {
   }
 }
 
+//test
+
 export default Customer
