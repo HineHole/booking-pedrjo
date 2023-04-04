@@ -18,3 +18,11 @@ export interface ICompleted {
   time: string;
   date: string;
 }
+
+export interface IBooking {
+  date: number;
+  time: number;
+  customer: string;
+  type: string;
+  status: boolean;
+}
