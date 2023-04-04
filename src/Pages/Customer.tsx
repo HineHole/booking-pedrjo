@@ -33,6 +33,7 @@ export default function Customer() {
         body: JSON.stringify({customer,level, employee, date}),
       })
       const data = await response.json();
+      console.log(data)
 
     } catch (error) {
       console.error(error)
