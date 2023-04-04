@@ -19,6 +19,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <HomePage />
+      <About />
       <Footer companyName="Städa Fint AB" />
     </div>
   );
