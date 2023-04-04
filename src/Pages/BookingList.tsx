@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/BookingList.css";
-import User from "./interfaces";
+import { User, ICompleted } from "./interfaces";
+import "./interfaces";
 
-const Users: React.FC = () => {
+function Users() {
   const [users, setUsers] = useState<User[]>([]);
   // fetch the api data using GET metod
   useEffect(() => {
@@ -30,9 +31,68 @@ const Users: React.FC = () => {
       console.log(error);
     }
   };
-  
-let getDate = new Date().toLocaleString("en-US", { day : '2-digit', month:'2-digit', year:'2-digit'})
-  
+  //completed Bookings
+  const [bookings, setBookings] = useState<ICompleted[]>([
+    {
+      id: 1,
+      customer: "Leo",
+      employee: "Erik",
+      date: "16/04/2023",
+      time: "10:35",
+      level: "Diamond Cleaning",
+    },
+    {
+      id: 2,
+      customer: "Maria",
+      employee: "Eva",
+      date: "17/04/2023",
+      time: "12:55",
+      level: "Window Cleaning",
+    },
+    {
+      id: 3,
+      customer: "Josef",
+      employee: "Mike",
+      date: "22/04/2023",
+      time: "20:35",
+      level: "Basic Cleaning",
+    },
+    {
+      id: 4,
+      customer: "Adam",
+      employee: "Mira",
+      date: "22/04/2023",
+      time: "08:35",
+      level: "Diamond Cleaning",
+    },
+    {
+      id: 5,
+      customer: "Lee",
+      employee: "John",
+      date: "16/04/2023",
+      time: "18:35",
+      level: "Basic Cleaning",
+    },
+  ]);
+
+  const [selectedBox, setSelectedBox] = useState<number[]>([]);
+  function handleSelectBox(id: number) {
+    if (selectedBox.includes(id)) {
+      setSelectedBox(selectedBox.filter((item) => item !== id));
+    } else {
+      setSelectedBox([...selectedBox, id]);
+    }
+  }
+
+  function handleDelete() {
+    console.log(selectedBox);
+    if (selectedBox.length === 0) {
+      setBookings([]);
+    } else {
+      setBookings(bookings.filter((item) => !selectedBox.includes(item.id)));
+      setSelectedBox([]);
+    }
+  }
 
   return (
     <>
@@ -78,50 +138,32 @@ let getDate = new Date().toLocaleString("en-US", { day : '2-digit', month:'2-dig
           </thead>
 
           <tbody>
-            <tr /*key={}*/>
-              <td>Sara</td>
-              <td>Adam</td>
-              <td>Diamond Cleaning</td>
-              <td>{getDate}</td>
-              <td>
-                 <input type="checkbox" className="check"/>
-              </td>
-            </tr>
-            <tr>
-              <td>Sebastian</td>
-              <td>Eva</td>
-              <td>Top Cleaning</td>
-              <td>{getDate}</td>
-              <td><input type="checkbox" /></td>
-            </tr>
-            <tr>
-              <td>Sebastian</td>
-              <td>Zach</td>
-              <td>Window Cleaning</td>
-              <td>{getDate}</td>
-              <td><input type="checkbox" /></td>
-            </tr>
-            <tr>
-              <td>Sebastian</td>
-              <td>Eva</td>
-              <td>Top Cleaning</td>
-              <td>{getDate}</td>
-              <td><input type="checkbox" /></td>
-            </tr>
-            <tr>
-              <td>Sebastian</td>
-              <td>Adam</td>
-              <td>Basic Cleaning</td>
-              <td>{getDate}</td>
-              <td><input type="checkbox" /></td>
-            </tr>
+            {bookings.map((booking) => (
+              <tr key={booking.id}>
+                <td>{booking.customer}</td>
+                <td>{booking.employee}</td>
+                <td> {booking.level}</td>
+                <td>
+                  {booking.time}
+                  <hr></hr>
+                  {booking.date}
+                </td>
+
+                <td>
+                  <input
+                    type="checkbox"
+                    onChange={() => handleSelectBox(booking.id)}
+                  />
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
-        <button>Delete All</button>
+        <button onClick={handleDelete}>Delete All</button>
       </div>
     </>
   );
-};
+}
 
 export default Users;
 
