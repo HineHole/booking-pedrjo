@@ -38,6 +38,7 @@ export default function Customer() {
     } catch (error) {
       console.error(error)
     }
+    Customer();
   }
 
 
