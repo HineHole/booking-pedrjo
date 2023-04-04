@@ -30,7 +30,8 @@ body{
 }
 
 input[type=text],
-input[type=submit]
+input[type=submit],
+input
 {
     background-color: #cddcf58e;;
     cursor: pointer;
