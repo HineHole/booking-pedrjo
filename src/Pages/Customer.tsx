@@ -72,7 +72,7 @@ export default function Customer() {
           <label>Window Cleaning</label>
           <input type="radio" name="Window Cleaning" value="Window Cleaning"onChange={e => setLevel(e.target.value)}></input>
           </div>
-          <button type="submit" value="Submit"/>
+          <input type="submit" value="Submit"/>
         </form>
       </div>
 
