@@ -1,27 +1,83 @@
-import React, { Component } from 'react'
-import {User} from './interfaces'
-import { IBooking } from './interfaces'
+import React, { Component, useState, useEffect } from 'react'
+import { User, ICompleted } from './interfaces'
+import { useParams } from 'react-router-dom';
+import '../styles/Customer.css'
 
 
 export default function Customer() {
+  let { user } = useParams()
+  const a: string | undefined = user;
 
-  const url =  ('https://bookings-api-igtv.onrender.com/bookings ')
-  
+  const [customer, setCustomer] = useState("")
+  const [date, setDate] = useState("")
+  const [time, setTime] = useState("")
+  const [level, setLevel] = useState("")
+  const [employee, setEmployee] = useState("")
+  const [myUser, setMyUser] = useState(a);
 
-  return (<>
-    <div>Customer</div>
-    <div className='Inputfields'>
-    <input type='text' placeholder='Name'></input>
-    <input type='range'></input>
-    <input type='range'></input>
-    <input type='date'></input>
-    <input type='time'></input>
-    </div>
+  const url = ('https://bookings-api-igtv.onrender.com/bookings ')
+
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+
+      const response = await fetch(
+        'https://bookings-api-igtv.onrender.com/bookings/', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({customer,level, employee, date}),
+      })
+      const data = await response.json();
+
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
+  return (
+  <>
+    <body>
+      <div>Customer</div>
+      <div className='container'>
+        <form onSubmit={handleSubmit} className='Inputfields' >
+        <label>Your Name:</label>
+          <input type="text" placeholder='John doe' onChange={e => setCustomer(e.target.value) }/>
+          <label>Choose a cleaner:</label>
+          <select onChange={e => setEmployee(e.target.value)}>
+          <option value=""></option>
+            <option value="Adam">Adam</option>
+            <option value="Adam">Adam</option>
+            <option value="Joe">Joe</option>
+          </select>
+          
+          <label>Choose a date:</label>
+          <input type='date' onChange={e => setDate(e.target.value)}></input>
+          <label>Choose a time:</label>
+          <input type='time' onChange={e => setTime(e.target.value)}></input>
+          
+
+          <div className = "raradioField">
+          <input type="radio" name="Basic cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Top Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Diamond Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Window Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          </div>
+          <button type="submit" />
+        </form>
+      </div>
+
+    </body>
     </>
   )
 
 
 
-  }
+}
 
 
