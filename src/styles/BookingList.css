@@ -81,5 +81,5 @@ body{
         }
       
         input[type="checkbox"] { 
-          filter: invert(20%) hue-rotate(18deg) brightness(1.7);
+          filter: invert(0%) hue-rotate(500deg) brightness(1.7);
         }

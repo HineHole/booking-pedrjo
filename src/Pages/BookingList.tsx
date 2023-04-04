@@ -5,13 +5,34 @@ import "./interfaces";
 
 function Users() {
   const [users, setUsers] = useState<User[]>([]);
+  const url = ('https://bookings-api-igtv.onrender.com/')
   // fetch the api data using GET metod
   useEffect(() => {
+    const fetchAPI= async () => {
+      const response = await fetch (url,{
+        mode: 'cors',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+      }
+      );
+      const data = await response.json();
+      console.log(data)
+    };
+    fetchAPI();
+    
     const fetchUsers = async () => {
-      const response = await fetch(
+      
+      const response = await fetch(  
         "https://bookings-api-igtv.onrender.com/bookings",
         {
+          mode: "cors",
           method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       const data = await response.json();
@@ -19,6 +40,7 @@ function Users() {
     };
     fetchUsers();
   });
+
   // Delete a specific booking
   const deletelist = async (id: string) => {
     const URL = id;
