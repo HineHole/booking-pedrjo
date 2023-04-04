@@ -63,12 +63,12 @@ export default function Customer() {
           
 
           <div className = "raradioField">
-          <input type="radio" name="Basic cleaning" onChange={e => setLevel(e.target.value)}></input>
-          <input type="radio" name="Top Cleaning" onChange={e => setLevel(e.target.value)}></input>
-          <input type="radio" name="Diamond Cleaning" onChange={e => setLevel(e.target.value)}></input>
-          <input type="radio" name="Window Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Basic cleaning" value="Basic Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Top Cleaning" value="Top Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Diamond Cleaning" value="Diamond Cleaning" onChange={e => setLevel(e.target.value)}></input>
+          <input type="radio" name="Window Cleaning" value="Window Cleaning"onChange={e => setLevel(e.target.value)}></input>
           </div>
-          <button type="submit" />
+          <button type="submit" value="Submit"/>
         </form>
       </div>
 
