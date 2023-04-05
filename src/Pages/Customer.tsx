@@ -24,6 +24,8 @@ export default function Customer() {
       alert("Please fill out all the fields")
       return;
     }
+
+    
     
     try {
       const response = await fetch(
