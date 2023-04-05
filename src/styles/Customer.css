@@ -20,14 +20,7 @@ body{
 
 }
 
-.radioFields{
-    display: inline-block;
-    position: relative;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    
-}
+
 
 input[type=text],
 input[type=submit],
