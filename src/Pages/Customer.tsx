@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import { User, ICompleted } from "./interfaces";
 import { useParams } from "react-router-dom";
 import "../styles/Customer.css";
+import BookingList from "./BookingList";
 
 export default function Customer() {
   let { user } = useParams();
@@ -108,6 +109,7 @@ export default function Customer() {
             <input type="submit" value="Submit" />
           </form>
         </div>
+        <BookingList></BookingList>
       </body>
     </>
   );
