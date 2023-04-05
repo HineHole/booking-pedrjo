@@ -50,6 +50,7 @@ export default function Customer() {
       <body>
         <div>Customer</div>
         <div className="container">
+          <h2>Create a booking:</h2>
           <form onSubmit={handleSubmit} className="Inputfields">
             <label>Your Name:</label>
             <input
