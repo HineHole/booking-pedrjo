@@ -58,7 +58,8 @@ export default function Customer() {
             <label>Your Name:</label>
             <input
               type="text"
-              placeholder="John doe"
+              value="Stefan B"
+              disabled
               onChange={(e) => setCustomer(e.target.value)}
             />
             <label>Choose a cleaner:</label>
