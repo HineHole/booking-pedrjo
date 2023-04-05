@@ -18,7 +18,10 @@ export default function Customer() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-   
+    if(!customer || !date || !time || !level || !employee){
+      alert("Please fill out all the fields")
+      return;
+    }
 
     
     
