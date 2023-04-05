@@ -31,6 +31,8 @@ body{
 
 input[type=text],
 input[type=submit],
+select,
+select:focus,
 input
 {
     background-color: #cddcf58e;;
@@ -41,11 +43,11 @@ input
 }
 
 
-select {
+/* select {
     width: 80%;
     margin: 10px;
 }
 select:focus {
     min-width: 80%;
     width: auto;
-}
+} */
