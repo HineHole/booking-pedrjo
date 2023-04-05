@@ -16,6 +16,12 @@ export default function Customer() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if(!customer || !date || !time || !level || !employee){
+      alert("Please fill out all the fields")
+      return;
+    }
+    
     try {
       const response = await fetch(
         "https://bookings-api-igtv.onrender.com/bookings/",
@@ -34,7 +40,9 @@ export default function Customer() {
       console.error(error);
     }
     Customer();
+
   };
+  
 
   return (
     <>
