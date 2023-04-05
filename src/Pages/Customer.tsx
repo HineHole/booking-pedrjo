@@ -3,6 +3,8 @@ import { User, ICompleted } from "./interfaces";
 import { useParams } from "react-router-dom";
 import "../styles/Customer.css";
 import BookingList from "./BookingList";
+import text from "../components/username";
+import Username from "../components/username";
 
 export default function Customer() {
   let { user } = useParams();
@@ -43,12 +45,11 @@ export default function Customer() {
     Customer();
 
   };
-  
 
   return (
     <>
       <body>
-        <div>Customer</div>
+        <Username></Username>
         <div className="container">
           <h2>Create a booking:</h2>
           <form onSubmit={handleSubmit} className="Inputfields">
