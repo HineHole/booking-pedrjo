@@ -5,27 +5,24 @@ import "./interfaces";
 
 function Users() {
   const [users, setUsers] = useState<User[]>([]);
-  const url = ('https://bookings-api-igtv.onrender.com/')
+  const url = "https://bookings-api-igtv.onrender.com/";
   // fetch the api data using GET metod
   useEffect(() => {
-    const fetchAPI= async () => {
-      const response = await fetch (url,{
-        mode: 'cors',
-        method: 'GET',
+    const fetchAPI = async () => {
+      const response = await fetch(url, {
+        mode: "cors",
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-
-      }
-      );
+      });
       const data = await response.json();
-      console.log(data)
+      console.log(data);
     };
     fetchAPI();
-    
+
     const fetchUsers = async () => {
-      
-      const response = await fetch(  
+      const response = await fetch(
         "https://bookings-api-igtv.onrender.com/bookings",
         {
           mode: "cors",
