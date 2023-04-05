@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -44,10 +44,11 @@ const HomePage: React.FC = () => {
     <HomePageContainer>
       <Title>Städa Fint AB</Title>
       <Subtitle>Your home cleaning service</Subtitle>
-      <Button>Get Started</Button>
+      <Link to="/customer">
+        <Button>Get Started</Button>
+      </Link>
     </HomePageContainer>
   );
 };
 
 export default HomePage;
-

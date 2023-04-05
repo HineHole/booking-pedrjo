@@ -5,21 +5,19 @@ import About from "./components/About";
 import Customer from "./Pages/Customer";
 import BookingList from "./Pages/BookingList";
 import Footer from "./components/Footer";
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<HomePage></HomePage>} />
+          <Route path="/" element={<HomePage></HomePage>} />
           <Route path="/about" element={<About></About>} />
           <Route path="/customer" element={<Customer></Customer>} />
           <Route path="/booking" element={<BookingList></BookingList>} />
         </Routes>
       </BrowserRouter>
-      <HomePage />
-      <About />
       <Footer companyName="Städa Fint AB" />
     </div>
   );
